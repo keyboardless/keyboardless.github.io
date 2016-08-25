@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-14T12:25:40.447Z</updated>
+  <updated>2016-08-23T02:34:01.974Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>trie tree</title>
+    <link href="http://yoursite.com/2016/08/16/trie-tree/"/>
+    <id>http://yoursite.com/2016/08/16/trie-tree/</id>
+    <published>2016-08-16T05:31:21.000Z</published>
+    <updated>2016-08-23T02:34:01.974Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="双数组Trie数"><a href="#双数组Trie数" class="headerlink" title="双数组Trie数"></a>双数组Trie数</h1><p><a href="https://linux.thai.net/~thep/datrie/datrie.html" target="_blank" rel="external">An Implementation of Double-Array Trie</a><br>一个蛮详细的从三数组、两数组原理介绍，暂时还没有看明白<br><a href="http://www.hankcs.com/program/java/%E5%8F%8C%E6%95%B0%E7%BB%84trie%E6%A0%91doublearraytriejava%E5%AE%9E%E7%8E%B0.html" target="_blank" rel="external">双数组Trie树(DoubleArrayTrie)Java实现</a><br>用了一个日本人实现的库<br><a href="https://www.toptal.com/java/the-trie-a-neglected-data-structure" target="_blank" rel="external">The Trie: A Neglected Data Structure</a><br>about large text search.</p>
+<h1 id="全文检索"><a href="#全文检索" class="headerlink" title="全文检索"></a>全文检索</h1><p>使用了一个lucene的库<br><a href="https://www.ibm.com/developerworks/cn/java/j-lo-lucene1/" target="_blank" rel="external">实战 Lucene，第 1 部分: 初识 Lucene</a></p>
+<h1 id="依存关系"><a href="#依存关系" class="headerlink" title="依存关系"></a>依存关系</h1><p>用到一种CoNLL的格式<br><a href="http://www.hankcs.com/nlp/corpus/chinese-treebank.html" target="_blank" rel="external">汉语树库</a><br>这里面介绍第二届自然语言处理与中文计算会议（NLP&amp;CC 2013）中用到的两个语聊，分别是清华的和哈工大的</p>
+<h1 id="Ansj分词"><a href="#Ansj分词" class="headerlink" title="Ansj分词"></a>Ansj分词</h1><p><a href="http://nlpchina.github.io/ansj_seg/" target="_blank" rel="external">说明文档</a></p>
+<p>配置文件中有，.map</p>
+<p>现在传入recognizeSemantic()的三个参数<br>String asrContext = “{\”auid\”:\”23232342424\”,\”uuid\”:\”23232424\”}”;<br>String appkey = “lanlan-nlp”;<br>String asrTxt = “打开空调”;</p>
+<p>多伦对话的历史对话信息，append到asrContext里面，并作为返回的参数</p>
+<p>V1：<br>第一次调用：<br>asrContext = recognizeSemantic(appkey, asrContext, asrTxt);</p>
+<p>asrContext = {“auid”:”23232342424”,”uuid”:”23232424”, “round1”:”{第一轮对话内容}” }<br>第一轮对话内容 = {“usr”:”打开空调”, “robo”:”{“data”:{“Switch”:”1”,”appliance”:”AIRCONDITION”},”intent”:”smarthome”,”name”:”smarthome”}”, “nlp”:”哪里的空调”}</p>
+<p>第二次调用<br>asrTxt = “卧室的”;<br>asrContext = recognizeSemantic(appkey, asrContext, asrTxt);</p>
+<p>asrContext = {“auid”:”23232342424”,”uuid”:”23232424”, “round1”:”{第一轮对话内容}”,”round2”:”{第二轮对话内容}” }<br>第一轮对话内容 = {“usr”:”打开空调”, “robo”:”{“data”:{“Switch”:”1”,”appliance”:”AIRCONDITION”},”intent”:”smarthome”,”name”:”smarthome”}”, “nlp”:”哪里的空调”}<br>第二轮对话内容 = {“usr”:”卧室的”,”robo”:”{“data”:{“Switch”:”1”,”appliance”:”AIRCONDITION”,”position”:”厨房”},”intent”:”smarthome”,”name”:”smarthome”}”,”nlp”:”正在打开卧室的空调”}</p>
+<p>第三次调用<br>asrTxt = “温度打到25度”;<br>asrContext = recognizeSemantic(appkey, asrContext, asrTxt);</p>
+<p>asrContext = {“auid”:”23232342424”,”uuid”:”23232424”, “round1”:”{第一轮对话内容}”,”round2”:”{第二轮对话内容}”,”round3”:”{第三轮对话内容}” }</p>
+<p>V2：<br>String asrContext = “{\”auid\”:\”23232342424\”,\”uuid\”:\”23232424\”}”;<br>String appkey = “lanlan-nlp”;<br>String asrTxt = “打开空调”;<br>第一次调用：<br>asrContext = recognizeSemantic(appkey, asrContext, asrTxt);</p>
+<p>返回结果<br>asrContext = {“auid”:”23232342424”,”uuid”:”23232424”, “data”:”{“Switch”:”1”,”appliance”:”AIRCONDITION”}” , ,”intent”:”smarthome”,”name”:”smarthome”,”nlp”:”哪里的空调”}</p>
+<p>第二次调用：<br>asrTxt = “卧室的”;<br>asrContext = recognizeSemantic(appkey, asrContext, asrTxt);<br>返回结果<br>asrContext = {“auid”:”23232342424”,”uuid”:”23232424”, “data”:”{“Switch”:”1”,”appliance”:”AIRCONDITION”,”position”:”卧室”}” , ,”intent”:”smarthome”,”name”:”smarthome”,”nlp”:”正在打开卧室空调”}</p>
+<p>第三次调用<br>asrTxt = “温度打到25度”;<br>asrContext = recognizeSemantic(appkey, asrContext, asrTxt);<br>返回结果<br>asrContext = {“auid”:”23232342424”,”uuid”:”23232424”, “data”:”{“Temperature”:”25”,”appliance”:”AIRCONDITION”,””position:”卧室”}” , ,”intent”:”smarthome”,”name”:”smarthome”,”nlp”:”正在设置卧室空调为25度”}</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;双数组Trie数&quot;&gt;&lt;a href=&quot;#双数组Trie数&quot; class=&quot;headerlink&quot; title=&quot;双数组Trie数&quot;&gt;&lt;/a&gt;双数组Trie数&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://linux.thai.net/~thep/datrie/d
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>firt post</title>
