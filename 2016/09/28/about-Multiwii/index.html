@@ -17,7 +17,7 @@ Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
 Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
 这个问题之前接Raspberry PI的时候出现过，当时USB转TTL用的是ch340，在电脑上识别的是/dev/ttyACM0
 查了一下解决方案，Linux下Arduino USB To TTL 权限问题解决现在用的第一种方案，编辑/etc/udev/rules.d/90-etreacl.ruleslogou">
-<meta property="og:updated_time" content="2016-09-28T05:48:55.000Z">
+<meta property="og:updated_time" content="2016-09-28T05:55:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="about Multiwii">
 <meta name="twitter:description" content="串口权限问题
@@ -61,9 +61,9 @@ Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -99,15 +99,13 @@ Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
 <li>这个问题之前接Raspberry PI的时候出现过，当时USB转TTL用的是ch340，在电脑上识别的是/dev/ttyACM0</li>
 <li>查了一下解决方案，<a href="http://www.smslit.top/arduino/2015/12/04/usbttlInLinux-Arduino.html" target="_blank" rel="external">Linux下Arduino USB To TTL 权限问题解决</a><br>现在用的第一种方案，编辑/etc/udev/rules.d/90-etreacl.rules<br>logout以后，用这两个命令开启权限：</li>
 </ul>
-<blockquote>
-<p>sudo usermod -a -G tty swordly<br>sudo usermod -a -G dialout swordly</p>
-</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo usermod <span class="_">-a</span> -G tty swordly</div><div class="line">$ sudo usermod <span class="_">-a</span> -G dialout swordly</div></pre></td></tr></table></figure>
 <p>之前是编辑了/etc/udev/rules.d/70-ttyusb.rules这个文件，但是只处理了ttyACM*，这次把ttyUSB的一并都cover.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/28/about-Multiwii/" data-id="citmhcfmh0001jxif6k2ovepp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/28/about-Multiwii/" data-id="citmhcfmh0001jxif6k2ovepp" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -117,7 +115,7 @@ Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
 <nav id="article-nav">
   
     <a href="/2016/09/28/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           Hello World
@@ -127,7 +125,7 @@ Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
   
   
     <a href="/2016/09/28/new-PC-post/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">new PC post</div>
     </a>
   
@@ -160,7 +158,7 @@ Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -197,7 +195,7 @@ Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
