@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -64,7 +64,7 @@
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/28/hello-world/" class="article-date">
-  <time datetime="2016-09-28T02:44:08.992Z" itemprop="datePublished">2016-09-28</time>
+  <time datetime="2016-09-28T05:37:10.940Z" itemprop="datePublished">2016-09-28</time>
 </a>
     
   </div>
@@ -96,7 +96,52 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/28/hello-world/" data-id="citmb5wv40002udifssca665e" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/28/hello-world/" data-id="citmhcfmk0003jxifc5zzqhu6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-about-Multiwii" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/28/about-Multiwii/" class="article-date">
+  <time datetime="2016-09-28T05:36:04.000Z" itemprop="datePublished">2016-09-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/28/about-Multiwii/">about Multiwii</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="串口权限问题"><a href="#串口权限问题" class="headerlink" title="串口权限问题"></a>串口权限问题</h1><ul>
+<li>Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限</li>
+<li>这个问题之前接Raspberry PI的时候出现过，当时USB转TTL用的是ch340，在电脑上识别的是/dev/ttyACM0</li>
+<li>查了一下解决方案，(Linux下Arduino USB To TTL 权限问题解决)[<a href="http://www.smslit.top/arduino/2015/12/04/usbttlInLinux-Arduino.html" target="_blank" rel="external">http://www.smslit.top/arduino/2015/12/04/usbttlInLinux-Arduino.html</a>]<br>现在用的第一种方案，编辑/etc/udev/rules.d/90-etreacl.rules<br>logout以后，用这两个命令开启权限：</li>
+</ul>
+<blockquote>
+<p>sudo usermod -a -G tty swordly<br>sudo usermod -a -G dialout swordly</p>
+</blockquote>
+<p>之前是编辑了/etc/udev/rules.d/70-ttyusb.rules这个文件，但是只处理了ttyACM*，这次把ttyUSB的一并都cover.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/28/about-Multiwii/" data-id="citmhcfmh0001jxif6k2ovepp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/28/new-PC-post/" data-id="citmb5wv50003udif9wzqcxlc" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/28/new-PC-post/" data-id="citmhcfmm0004jxifyrkib6lx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/18/Smarthome-dialog-design/" data-id="citmb5wuz0000udif0qdmv3jt" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/18/Smarthome-dialog-design/" data-id="citmhcfmd0000jxifry1ge648" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/16/trie-tree/" data-id="citmb5wv60004udiferdtffu2" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/16/trie-tree/" data-id="citmhcfmo0005jxifduyh068b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/14/firt-post/" data-id="citmb5wv30001udifc1mr2bih" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/14/firt-post/" data-id="citmhcfmj0002jxifufpesqxq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -354,12 +399,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
             <a href="/2016/09/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/28/about-Multiwii/">about Multiwii</a>
           </li>
         
           <li>
@@ -372,10 +421,6 @@
         
           <li>
             <a href="/2016/08/16/trie-tree/">trie tree</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/14/firt-post/">firt post</a>
           </li>
         
       </ul>
@@ -391,7 +436,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
