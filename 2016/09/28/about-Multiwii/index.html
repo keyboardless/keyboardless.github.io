@@ -8,7 +8,7 @@
   <meta name="description" content="串口权限问题
 Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
 这个问题之前接Raspberry PI的时候出现过，当时USB转TTL用的是ch340，在电脑上识别的是/dev/ttyACM0
-查了一下解决方案，(Linux下Arduino USB To TTL 权限问题解决)[http://www.smslit.top/arduino/2015/12/04/usbttlI">
+查了一下解决方案，Linux下Arduino USB To TTL 权限问题解决现在用的第一种方案，编辑/etc/udev/rules.d/90-etreacl.ruleslogou">
 <meta property="og:type" content="article">
 <meta property="og:title" content="about Multiwii">
 <meta property="og:url" content="http://yoursite.com/2016/09/28/about-Multiwii/index.html">
@@ -16,14 +16,14 @@ Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
 <meta property="og:description" content="串口权限问题
 Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
 这个问题之前接Raspberry PI的时候出现过，当时USB转TTL用的是ch340，在电脑上识别的是/dev/ttyACM0
-查了一下解决方案，(Linux下Arduino USB To TTL 权限问题解决)[http://www.smslit.top/arduino/2015/12/04/usbttlI">
-<meta property="og:updated_time" content="2016-09-28T05:36:28.000Z">
+查了一下解决方案，Linux下Arduino USB To TTL 权限问题解决现在用的第一种方案，编辑/etc/udev/rules.d/90-etreacl.ruleslogou">
+<meta property="og:updated_time" content="2016-09-28T05:46:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="about Multiwii">
 <meta name="twitter:description" content="串口权限问题
 Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
 这个问题之前接Raspberry PI的时候出现过，当时USB转TTL用的是ch340，在电脑上识别的是/dev/ttyACM0
-查了一下解决方案，(Linux下Arduino USB To TTL 权限问题解决)[http://www.smslit.top/arduino/2015/12/04/usbttlI">
+查了一下解决方案，Linux下Arduino USB To TTL 权限问题解决现在用的第一种方案，编辑/etc/udev/rules.d/90-etreacl.ruleslogou">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -97,7 +97,7 @@ Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限
         <h1 id="串口权限问题"><a href="#串口权限问题" class="headerlink" title="串口权限问题"></a>串口权限问题</h1><ul>
 <li>Arduino IDE在烧写的时候报错没有/dev/ttyUSB0的权限</li>
 <li>这个问题之前接Raspberry PI的时候出现过，当时USB转TTL用的是ch340，在电脑上识别的是/dev/ttyACM0</li>
-<li>查了一下解决方案，(Linux下Arduino USB To TTL 权限问题解决)[<a href="http://www.smslit.top/arduino/2015/12/04/usbttlInLinux-Arduino.html" target="_blank" rel="external">http://www.smslit.top/arduino/2015/12/04/usbttlInLinux-Arduino.html</a>]<br>现在用的第一种方案，编辑/etc/udev/rules.d/90-etreacl.rules<br>logout以后，用这两个命令开启权限：</li>
+<li>查了一下解决方案，<a href="http://www.smslit.top/arduino/2015/12/04/usbttlInLinux-Arduino.html" target="_blank" rel="external">Linux下Arduino USB To TTL 权限问题解决</a><br>现在用的第一种方案，编辑/etc/udev/rules.d/90-etreacl.rules<br>logout以后，用这两个命令开启权限：</li>
 </ul>
 <blockquote>
 <p>sudo usermod -a -G tty swordly<br>sudo usermod -a -G dialout swordly</p>
